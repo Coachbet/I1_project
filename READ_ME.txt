@@ -1,5 +1,4 @@
-You need to enter all the things that we are going to do:
-
+To do list 
  
 A partir de end game, faire d'autre fonctions pour implementer :
 Enregistrer le score dans un fichier en append en demandant le nom du joueur dans un input turtle
@@ -22,3 +21,8 @@ Ajout des blocs fixe et gerer que les bullets ne puisse pas les traverser et que
 À une certaine vitesse il faudra bloquer la vitesse de descente sinon cela devient injouable et jouer sur les trajectoires et les blocs
  
 Attention au temps de demo (2/3 mn) poura voir le temps de tout montrer, il faut maitriser les tempos et timing de descente
+
+- comment the code 
+
+how it works:
+lunch space invader 
