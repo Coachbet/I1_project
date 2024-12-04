@@ -107,16 +107,42 @@ class Alien:
         if self.move_possible :
             self.screen.ontimer(lambda: self.move(step_x,step_y,speed), speed)
 
-    def set_crash(self):
-        print ("explosion")
-        self.available = False
-        self.delete()
+  def set_crash(self):
+    print("explosion")
+    self.available = False
 
-        # if alien fleet is empty, go to the next level
-        if not game.game_global.alien_fleet.fleet :
-            game.game_global.next_level()
-            return
-        
+    # Display explosion effect
+    self.explosion_effect()
+
+    # Delete the alien after the explosion
+    self.delete()
+
+    # If the alien fleet is empty, move to the next level
+    if not game.game_global.alien_fleet.fleet:
+        game.game_global.next_level()
+        return
+
+def explosion_effect(self):
+    """Creates an explosion animation at the alien's position using Turtle."""
+    explosion_turtle = Turtle()
+    explosion_turtle.hideturtle()
+    explosion_turtle.penup()
+    explosion_turtle.goto(self.alien_t.position())  # Set to the alien's position
+    explosion_turtle.pendown()
+    explosion_turtle.speed(0)
+
+    colors = ["yellow", "orange", "red"]  # Colors for explosion effect
+    for size in range(5, 30, 5):  # Increasing circles to simulate an explosion
+        explosion_turtle.color(colors[size // 10 % len(colors)])  # Cycle through colors
+        explosion_turtle.penup()
+        explosion_turtle.goto(self.alien_t.position())  # Reset to alien's position
+        explosion_turtle.pendown()
+        explosion_turtle.begin_fill()
+        explosion_turtle.circle(size)
+        explosion_turtle.end_fill()
+        explosion_turtle.clear()  # Remove the circle before drawing the next one
+
+    explosion_turtle.hideturtle()  # Hide the explosion Turtle at the end
         
 
     def delete(self):
