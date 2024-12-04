@@ -28,7 +28,7 @@ Modifier le nbre d'alien qui descende
 
  
 
-Faire un design d'explosion sur set_crash 
+Faire un design d'explosion sur set_crash (j'essaye de le faire sur ma branche , Pollux)
 
 Ameliorer la zone de contact entre alien et bullet, peut etre un pb qd bullet sur le cote gauche (contact qd un peu trop loin d'alien) 
 
