@@ -1,4 +1,7 @@
 To do list 
+
+Ecran d acceuille:
+  ecran d accauille qui disparait appres avoir appuyer sur "space" et avce les regles de jeux 
 Project report:(kenza)
   A report explaining the game's design, including:
   Descriptions of main components.
