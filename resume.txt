@@ -1,0 +1,91 @@
+1. Alien_fleet and Alien Classes
+These handle the enemy aliens, their creation, movement, and removal.
+Alien_fleet Class
+Purpose: Manage a group of aliens (fleet), including their creation, movement, and detecting collisions.
+Functions:
+__init__:
+Initializes the fleet's attributes like position and an empty list for the aliens.
+launch_tempo:
+Placeholder for additional logic (currently does nothing).
+start:
+Creates 5 alien objects, spaces them horizontally, and starts their movement using a timer.
+get_alien_contact(x_bullet, y_bullet):
+Detects if a bullet hits any alien and returns the hit alien object, or None if no hit is detected.
+
+Alien Class
+Purpose: Represent a single alien, manage its movement, and handle collisions or removal.
+Functions:
+__init__:
+Initializes the alien’s graphical representation, position, and attributes.
+start:
+Begins the alien's movement, adjusting its speed based on the game level.
+move(step_x, step_y, speed):
+Moves the alien horizontally and vertically. Reverses direction if it hits the screen edge. Ends the game if the alien moves off-screen.
+set_crash:
+Handles the alien being destroyed (explosion placeholder). If all aliens are gone, advances to the next level.
+delete:
+Removes the alien from the fleet and hides its graphical representation.
+
+2. Game Class
+This class manages global game logic, such as levels, scoring, and interactions between components.
+Functions:
+__init__:
+Initializes the game state (score, level, time, bullets, etc.) and prepares graphical objects for messages.
+add_screen(screen):
+Links the game instance with the main screen.
+add_ship(ship):
+Links the game instance with the player's ship.
+set_score(action, value):
+Updates or resets the game score.
+display_score:
+Displays the current score on the screen.
+get_level:
+Returns the current game level.
+set_level(action, value):
+Updates or resets the game level.
+display_level:
+Displays the current level on the screen.
+display_bullet_count(action, value):
+Updates the ammunition count display or shows a "no bullets" message.
+display_msg(size, color, texte):
+Displays a custom message (e.g., "END GAME").
+end_game:
+Triggers the game over state with a message.
+new_game:
+Resets all game elements (score, level, ship, aliens) and starts a new game.
+next_level:
+Clears aliens, increments the level, updates the ammunition, and starts a new alien fleet.
+
+3. Ship Class
+Represents the player's ship, including its movement, shooting, and bullet management.
+Functions:
+__init__:
+Initializes the ship’s graphical representation, position, and ammunition.
+set_bullet_loader(value):
+Sets the number of bullets the ship can fire.
+get_bullet_loader:
+Returns the current number of bullets left.
+move(key):
+Moves the ship left or right based on key presses.
+fire:
+Fires a bullet if there’s ammunition left, updates the bullet count, and initiates the bullet's movement.
+
+4. Global Code
+Manages the overall game flow, linking all components and initializing the main game loop.
+Functions:
+create_screen():
+Sets up the game window with dimensions, background color, and a title.
+update(screen):
+Refreshes the screen at regular intervals (based on FPS).
+space_invaders():
+Main function that initializes the game objects (Ship, Alien_fleet, etc.), sets up key bindings, and starts the game loop.
+
+Overall Flow
+Game Initialization:
+space_invaders() creates the screen and game components, starting the main loop.
+Alien Management:
+Alien_fleet creates and manages alien movement and collisions.
+Player Interaction:
+The Ship can move and fire bullets, which interact with aliens.
+Game State:
+Game manages scoring, levels, and transitions between states like "Game Over" or "Next Level."
